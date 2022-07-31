@@ -20,11 +20,11 @@ function prisonerProblem() {
   
   // Assign Random Numbers
   for (let i = 0; i < totalPrisoners; i++) {
-    let randomNumber = getRandomNumber(totalPrisoners);
-  
-    while (randomNumbers[randomNumber]) {
+    let randomNumber;
+
+    do {
       randomNumber = getRandomNumber(totalPrisoners);
-    }
+    } while (randomNumbers[randomNumber]);
   
     randomNumbers[randomNumber] = true;
     boxes[i] = randomNumber;
